@@ -1,12 +1,21 @@
 package com.example.weplan;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +33,41 @@ public class MainActivity extends AppCompatActivity {
         /*ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
         startActivity(intent, options.toBundle());*/
+
+        Button boton = findViewById(R.id.pasar);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //al "deslizar" y cambiar de actividad le voy a pasar el día de hoy
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Calendar c = Calendar.getInstance();
+                String stringTime = sdf.format(c.getTime());
+
+                Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
+                intent.putExtra("currentdate", stringTime);
+                startActivity(intent);
+            }
+        });
+
+        //clickando en algun día del calendario
+        CalendarView calendarView = (CalendarView) findViewById(R.id.cv_calendar);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                int month = i1+1;
+                String stringTime = i2+"/"+month+"/"+i;
+
+                Intent intent = new Intent(MainActivity.this, TareasDiaSeleccionado.class);
+                intent.putExtra("selected_date", stringTime);
+                startActivity(intent);
+
+                //Toast.makeText(getApplicationContext(), ""+stringTime, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
     }
 
 

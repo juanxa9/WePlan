@@ -1,11 +1,4 @@
 package com.example.weplan;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,32 +8,39 @@ import android.provider.BaseColumns;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.weplan.adapters.AdapterTareasHoy;
 import com.example.weplan.database.TareaContract;
 import com.example.weplan.database.TareaHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class TareasParaHoy extends AppCompatActivity {
-    String date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
+public class TareasDiaSeleccionado extends AppCompatActivity {
+    private String date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tareas_para_hoy);
-
-        date = getIntent().getStringExtra("currentdate");
-
-
-
         displayDatabase();
 
-        //crear una tarea nueva
+         date = getIntent().getStringExtra("selected_date");
+
+
+
+
+
+        //crear una tarea nueva para el dia seleccionado
         FloatingActionButton nuevatarea = (FloatingActionButton) findViewById(R.id.anyadirnuevatarea);
         nuevatarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TareasParaHoy.this, CrearTarea.class);
-                intent.putExtra("adddate", date);
+                Intent intent = new Intent(TareasDiaSeleccionado.this, CrearTareaDiaSeleccionado.class);
+                intent.putExtra("dateadd", date);
                 startActivity(intent);
             }
         });
@@ -49,7 +49,7 @@ public class TareasParaHoy extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(TareasParaHoy.this, MainActivity.class);
+                Intent intent2 = new Intent(TareasDiaSeleccionado.this, MainActivity.class);
                 startActivity(intent2);
             }
         });
@@ -68,15 +68,16 @@ public class TareasParaHoy extends AppCompatActivity {
         };
 
 
+
         String selection = TareaContract.TareaEntry.COLUMN_DATE + " = ?";
         String[] selectionArgs = {date};
 
         Cursor cursor = db.query(
-              TareaContract.TareaEntry.TABLE_NAME,
-              projection,
-              selection,
-              selectionArgs,
-              null,
+                TareaContract.TareaEntry.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
                 null,
                 null
         );
@@ -89,3 +90,4 @@ public class TareasParaHoy extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 }
+
