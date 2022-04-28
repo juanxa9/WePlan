@@ -3,33 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".PuntuarDia">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="221dp"
-                android:layout_height="356dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/sunglasses_emoji_png_17396" />
-        </LinearLayout>
-    </LinearLayout>
+        <!-- Media -->
+        <ImageView
+            android:layout_width="208dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/sunglasses_emoji_png_17396" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+       app:layout_constraintTop_toBottomOf="@+id/card"
+       >
+
+
+        <!-- Media -->
+        <ImageView
+            android:layout_width="208dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/neutral_face_emoji" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card2"
+        tools:layout_editor_absoluteX="8dp">
+
+
+        <!-- Media -->
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/toppng_com_sad_emoji_png_pic_640x640" />
+
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
