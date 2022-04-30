@@ -1,5 +1,6 @@
 package com.example.weplan;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,16 +25,13 @@ import java.util.Calendar;
 
 public class TareasDiaSeleccionado extends AppCompatActivity {
     private String date;
+    private AdapterTareasHoy adapter = new AdapterTareasHoy();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tareas_para_hoy);
+        date = getIntent().getStringExtra("selected_date");
         displayDatabase();
-
-         date = getIntent().getStringExtra("selected_date");
-
-
-
 
 
         //crear una tarea nueva para el dia seleccionado
@@ -45,6 +45,7 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
             }
         });
 
+        //el boton para volver al main activity, que luego se sustituirá por deslizamiento
         Button volver = (Button) findViewById(R.id.volver);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +55,46 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
             }
         });
 
+
+
+        /*CheckBox checkboxtarea =(CheckBox) findViewById(R.id.checkboxtarea);
+
+
+        if(checkboxtarea.isChecked()){
+            String nombre_tarea = checkboxtarea.getText().toString();
+                    setCheckedTask(nombre_tarea);
+        }
+
+        checkboxtarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    String nombre_tarea = checkboxtarea.getText().toString();
+                    setCheckedTask(nombre_tarea);
+                }
+            }
+        });*/
+
+       /* View.OnClickListener onItemClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+
+                Cursor cursor = adapter.getCursor();
+
+                cursor.moveToPosition(viewHolder.getAdapterPosition());
+
+                int columna_nombre = cursor.getColumnIndex(TareaContract.TareaEntry.COLUMN_TASKNAME);
+                String nombre_tarea = cursor.getString(columna_nombre);
+                setCheckedTask(nombre_tarea);
+
+
+
+            }
+        };*/
     }
 
+    //funcion para mostrar las tareas de ese día
     public void displayDatabase(){
         TareaHelper dbHelper = new TareaHelper(this);
 
@@ -83,11 +122,33 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
         );
 
         //setup cursor adapter
-        AdapterTareasHoy adapter = new AdapterTareasHoy();
+
         adapter.setCursor(cursor);
         RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+
+    public void setCheckedTask(String nombre_tarea){
+
+        String app = getResources().getString(R.string.app_name);
+
+        TareaHelper dbHelper = new TareaHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TareaContract.TareaEntry.COLUMN_DONE, 1);
+
+        String selection = TareaContract.TareaEntry.COLUMN_TASKNAME + " LIKE ?";
+        String[] selectionArgs = {nombre_tarea};
+
+        int count = db.update(
+                TareaContract.TareaEntry.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs
+        );
+
     }
 }
 

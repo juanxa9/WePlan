@@ -19,6 +19,12 @@
             android:name=".TareasTotales"
             android:exported="false" />
         <activity
+            android:name=".CrearTareaDiaSeleccionado"
+            android:exported="false"
+            />
+        <activity android:name=".TareasDiaSeleccionado"
+            android:exported="false"/>
+        <activity
             android:name=".TareasParaHoy"
             android:exported="false" />
         <activity
