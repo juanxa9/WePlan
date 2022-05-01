@@ -2,12 +2,15 @@ package com.example.weplan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GestureDetectorCompat;
 
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    private GestureDetector gestos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent, options.toBundle());*/
 
         Button boton = findViewById(R.id.pasar);
+
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        gestos = new GestureDetector(this, new EscuchaGestos());
 
         //clickando en algun día del calendario
         CalendarView calendarView = (CalendarView) findViewById(R.id.cv_calendar);
@@ -64,12 +71,25 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), ""+stringTime, Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
     }
 
+    class EscuchaGestos extends GestureDetector.SimpleOnGestureListener{
+        @Override
+        public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar c = Calendar.getInstance();
+            String stringTime = sdf.format(c.getTime());
 
+            Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
+            intent.putExtra("currentdate", stringTime);
+            startActivity(intent);
+            return true;
+        }
+    }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        gestos.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
 }

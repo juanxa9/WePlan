@@ -12,6 +12,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,6 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class TareasParaHoy extends AppCompatActivity {
     String date;
+    private GestureDetector gestos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class TareasParaHoy extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+        gestos = new GestureDetector(this, new EscuchaGestos());
 
     }
 
@@ -87,5 +91,20 @@ public class TareasParaHoy extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+
+    class EscuchaGestos extends GestureDetector.SimpleOnGestureListener{
+        @Override
+        public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            Intent intent2 = new Intent(TareasParaHoy.this, MainActivity.class);
+            startActivity(intent2);
+            return true;
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        gestos.onTouchEvent(event);
+        return super.onTouchEvent(event);
     }
 }
