@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +34,8 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
     @Override
     public AdapterTareasHoy.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tarea_recyclerview_tareas_hoy, parent, false);
+
+
         return new ViewHolder(view);
     }
 
@@ -50,6 +53,13 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
         holder.tarea.setText(name);
         boolean a = (done !=0);
         holder.tarea.setChecked(a);
+
+       /* holder.tarea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });*/
 
 
     }

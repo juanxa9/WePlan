@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private GestureDetector gestos;
@@ -61,8 +62,15 @@ public class MainActivity extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                int month = i1+1;
-                String stringTime = i2+"/"+month+"/"+i;
+
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Calendar cal = Calendar.getInstance();
+                cal.set(Calendar.MONTH, i1);
+                cal.set(Calendar.DAY_OF_MONTH, i2);
+                cal.set(Calendar.YEAR, i);
+                String stringTime = sdf.format(cal.getTime());
+
 
                 Intent intent = new Intent(MainActivity.this, TareasDiaSeleccionado.class);
                 intent.putExtra("selected_date", stringTime);

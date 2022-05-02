@@ -26,12 +26,18 @@ import java.util.Calendar;
 public class TareasDiaSeleccionado extends AppCompatActivity {
     private String date;
     private AdapterTareasHoy adapter = new AdapterTareasHoy();
+    private CheckBox checkboxtarea;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tareas_para_hoy);
         date = getIntent().getStringExtra("selected_date");
-        displayDatabase();
+        Cursor cursor = displayDatabase();
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        adapter.setCursor(cursor);
+
 
 
         //crear una tarea nueva para el dia seleccionado
@@ -57,15 +63,15 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
 
 
 
-        /*CheckBox checkboxtarea =(CheckBox) findViewById(R.id.checkboxtarea);
+         /*checkboxtarea =(CheckBox) findViewById(R.id.checkboxtarea);
 
 
         if(checkboxtarea.isChecked()){
             String nombre_tarea = checkboxtarea.getText().toString();
                     setCheckedTask(nombre_tarea);
-        }
+        }*/
 
-        checkboxtarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*checkboxtarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(compoundButton.isChecked()){
@@ -75,27 +81,11 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
             }
         });*/
 
-       /* View.OnClickListener onItemClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
 
-                Cursor cursor = adapter.getCursor();
-
-                cursor.moveToPosition(viewHolder.getAdapterPosition());
-
-                int columna_nombre = cursor.getColumnIndex(TareaContract.TareaEntry.COLUMN_TASKNAME);
-                String nombre_tarea = cursor.getString(columna_nombre);
-                setCheckedTask(nombre_tarea);
-
-
-
-            }
-        };*/
     }
 
     //funcion para mostrar las tareas de ese día
-    public void displayDatabase(){
+    public Cursor displayDatabase(){
         TareaHelper dbHelper = new TareaHelper(this);
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -123,10 +113,11 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
 
         //setup cursor adapter
 
-        adapter.setCursor(cursor);
+        return cursor;
+        /*adapter.setCursor(cursor);
         RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);*/
     }
 
     public void setCheckedTask(String nombre_tarea){

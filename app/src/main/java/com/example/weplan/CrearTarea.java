@@ -19,10 +19,13 @@ import java.util.Date;
 
 public class CrearTarea extends AppCompatActivity {
 
+    private String date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_tarea);
+        date = getIntent().getStringExtra("adddate");
+
     }
 
     public void writeToDataBase(View view){
@@ -34,14 +37,14 @@ public class CrearTarea extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.et_taskName);
         String name = editText.getText().toString();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        /*SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Calendar c = Calendar.getInstance();
-        String stringTime = sdf.format(c.getTime());
+        String stringTime = sdf.format(c.getTime());*/
 
         ContentValues values = new ContentValues();
         values.put(TareaContract.TareaEntry.COLUMN_TASKNAME, name);
         values.put(TareaContract.TareaEntry.COLUMN_DONE, 0);
-        values.put(TareaContract.TareaEntry.COLUMN_DATE, stringTime);
+        values.put(TareaContract.TareaEntry.COLUMN_DATE, date);
 
         long newRowId = db.insert(TareaContract.TareaEntry.TABLE_NAME, null, values);
         Intent intent = new Intent(this, TareasParaHoy.class);
