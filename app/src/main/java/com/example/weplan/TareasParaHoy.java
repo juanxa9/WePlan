@@ -98,8 +98,16 @@ public class TareasParaHoy extends AppCompatActivity {
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
             Intent intent2 = new Intent(TareasParaHoy.this, MainActivity.class);
             startActivity(intent2);
+
+            if(v < v1){
+                overridePendingTransition(0, R.anim.trans_left);
+            }
+            else{
+                overridePendingTransition(0, R.anim.trans_right);
+            }
             return true;
         }
+
     }
 
     @Override

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -97,6 +97,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
             intent.putExtra("currentdate", stringTime);
             startActivity(intent);
+            if(v < v1){
+                overridePendingTransition(0, R.anim.trans_left);
+            }
+            else{
+                overridePendingTransition(0, R.anim.trans_right);
+            }
+
             return true;
         }
     }
