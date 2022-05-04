@@ -26,4 +26,8 @@
             @transition/change_image_transform</item>
 
     </style>
+
+    <style name="splashTheme" parent="Theme.WePlan">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 </resources>
