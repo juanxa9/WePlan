@@ -1,26 +1,19 @@
 package com.example.weplan.adapters;
 
-
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weplan.R;
 import com.example.weplan.database.TareaContract;
-import com.example.weplan.database.*;
 
-import java.util.concurrent.RecursiveAction;
-
-public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.ViewHolder>{
+public class AdapterTareasTotales extends RecyclerView.Adapter<AdapterTareasTotales.ViewHolder>{
     private Cursor items;
     Context context;
     View.OnClickListener mOnItemClickListener;
@@ -34,15 +27,15 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
 
     @NonNull
     @Override
-    public AdapterTareasHoy.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tarea_recyclerview_tareas_hoy, parent, false);
+    public AdapterTareasTotales.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tarea_recyclerview_tareas_totales, parent, false);
 
 
-        return new ViewHolder(view);
+        return new AdapterTareasTotales.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterTareasHoy.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterTareasTotales.ViewHolder holder, int position) {
 
         items.moveToPosition(position);
         int taskname_column = items.getColumnIndex(TareaContract.TareaEntry.COLUMN_TASKNAME);
@@ -59,37 +52,6 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
         holder.tarea.setChecked(a);
 
 
-     /*holder.tarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-          @Override
-          public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-              if(holder.tarea.isChecked()){
-                 String nombre_tarea = holder.tarea.getText().toString();
-                  String app = "WePlan";
-
-                  TareaHelper dbHelper = new TareaHelper(context);
-                  SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-                  ContentValues values = new ContentValues();
-                  values.put(TareaContract.TareaEntry.COLUMN_DONE, 1);
-
-                  String selection = TareaContract.TareaEntry.COLUMN_TASKNAME + " LIKE ?";
-                  String[] selectionArgs = {nombre_tarea};
-
-                  int count = db.update(
-                          TareaContract.TareaEntry.TABLE_NAME,
-                          values,
-                          selection,
-                          selectionArgs
-                  );
-
-
-             }
-              notifyDataSetChanged();
-
-
-          }
-      });*/
 
 
     }

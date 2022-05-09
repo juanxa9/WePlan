@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
        /* // inside your activity (if you did not enable transitions in your theme)
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 
@@ -45,21 +51,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
         startActivity(intent, options.toBundle());*/
 
-        Button boton = findViewById(R.id.pasar);
 
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //al "deslizar" y cambiar de actividad le voy a pasar el día de hoy
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                Calendar c = Calendar.getInstance();
-                String stringTime = sdf.format(c.getTime());
 
-                Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
-                intent.putExtra("currentdate", stringTime);
-                startActivity(intent);
-            }
-        });
 
         gestos = new GestureDetector(this, new EscuchaGestos());
 
@@ -85,6 +78,26 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), ""+stringTime, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mimenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.tareas_completadas:
+                Intent intent = new Intent(MainActivity.this, TareasTotales.class);
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
     }
 
     class EscuchaGestos extends GestureDetector.SimpleOnGestureListener{
