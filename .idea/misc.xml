@@ -4,18 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/bordergreen.xml" value="0.1075" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/calificar.xml" value="0.2595" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/ic_add_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/ic_menu_24dp.xml" value="0.1" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/productividad.xml" value="0.1565" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/shr_menu.xml" value="0.1535" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/tareas_completadas.xml" value="0.1565" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_crear_tarea.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_puntuar_dia.xml" value="0.2" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_tareas_para_hoy.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_tareas_para_hoy.xml" value="0.2" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_tareas_totales.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/ejemplo.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_para_recyclerview.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_hoy.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_totales.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/menu/bottom_app_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/menu/mimenu.xml" value="0.1" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/menu/navigation_drawer.xml" value="0.264" />
         <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/drawable/date_calendar.xml" value="0.2985" />

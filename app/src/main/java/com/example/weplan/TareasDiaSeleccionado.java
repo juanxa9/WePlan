@@ -6,18 +6,24 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weplan.adapters.AdapterTareasHoy;
 import com.example.weplan.database.TareaContract;
 import com.example.weplan.database.TareaHelper;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
@@ -51,35 +57,45 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
             }
         });
 
-        //el boton para volver al main activity, que luego se sustituirá por deslizamiento
-        Button volver = (Button) findViewById(R.id.volver);
-        volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(TareasDiaSeleccionado.this, MainActivity.class);
-                startActivity(intent2);
-            }
-        });
+        /*BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+        setSupportActionBar(bottomAppBar);*/
 
 
+    }
 
-         /*checkboxtarea =(CheckBox) findViewById(R.id.checkboxtarea);
 
-
-        if(checkboxtarea.isChecked()){
-            String nombre_tarea = checkboxtarea.getText().toString();
-                    setCheckedTask(nombre_tarea);
-        }*/
-
-        /*checkboxtarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(compoundButton.isChecked()){
-                    String nombre_tarea = checkboxtarea.getText().toString();
-                    setCheckedTask(nombre_tarea);
+    /*private boolean inflateBottomAppBar(){
+        BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+        Menu bottomMenu = bottomAppBar.getMenu();
+        getMenuInflater().inflate(R.menu.bottom_app_bar, bottomMenu);
+        for(int i=0; i<bottomMenu.size(); i++) {
+            bottomMenu.getItem(i).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    return onOptionsItemSelected(menuItem);
                 }
-            }
-        });*/
+            });
+
+        }
+
+        return super.onCreateOptionsMenu(bottomMenu);
+    }*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bottom_app_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.calificar_dia:
+                Intent intent = new Intent(TareasDiaSeleccionado.this, PuntuarDia.class);
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
 
     }

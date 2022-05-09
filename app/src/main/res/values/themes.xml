@@ -27,7 +27,7 @@
 
     </style>
 
-    <style name="Widget.WePlan.Toolbar" parent="Widget.AppCompat.Toolbar">
+    <style name="Widget.WePlan.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">?attr/colorAccent</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>

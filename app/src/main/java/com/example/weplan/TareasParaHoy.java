@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +24,7 @@ import android.widget.Button;
 import com.example.weplan.adapters.AdapterTareasHoy;
 import com.example.weplan.database.TareaContract;
 import com.example.weplan.database.TareaHelper;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class TareasParaHoy extends AppCompatActivity {
@@ -48,17 +53,42 @@ public class TareasParaHoy extends AppCompatActivity {
             }
         });
 
-        Button volver = (Button) findViewById(R.id.volver);
+        /*Button volver = (Button) findViewById(R.id.volver);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(TareasParaHoy.this, MainActivity.class);
                 startActivity(intent2);
             }
-        });
+        });*/
         gestos = new GestureDetector(this, new EscuchaGestos());
 
+
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bottom_app_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.calificar_dia:
+                Intent intent = new Intent(TareasParaHoy.this, PuntuarDia.class);
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+    }
+
+//BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+
 
     public void displayDatabase(){
         TareaHelper dbHelper = new TareaHelper(this);
