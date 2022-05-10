@@ -5,6 +5,7 @@ import java.util.Date;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,32 +64,21 @@ public class TareasParaHoy extends AppCompatActivity {
         });*/
         gestos = new GestureDetector(this, new EscuchaGestos());
 
-
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bottom_app_bar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.calificar_dia:
-                Intent intent = new Intent(TareasParaHoy.this, PuntuarDia.class);
-                startActivity(intent);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
+        BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.calificar_dia:
+                        Intent intent = new Intent(TareasParaHoy.this, PuntuarDia.class);
+                        startActivity(intent);
+                    default:
+                        return false;
+                }
+            }
+        });
 
     }
-
-//BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
-
 
     public void displayDatabase(){
         TareaHelper dbHelper = new TareaHelper(this);

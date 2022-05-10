@@ -56,49 +56,23 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        /*BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
-        setSupportActionBar(bottomAppBar);*/
-
-
-    }
-
-
-    /*private boolean inflateBottomAppBar(){
         BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
-        Menu bottomMenu = bottomAppBar.getMenu();
-        getMenuInflater().inflate(R.menu.bottom_app_bar, bottomMenu);
-        for(int i=0; i<bottomMenu.size(); i++) {
-            bottomMenu.getItem(i).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
-                @Override
-                public boolean onMenuItemClick(MenuItem menuItem) {
-                    return onOptionsItemSelected(menuItem);
+        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.calificar_dia:
+                        Intent intent = new Intent(TareasDiaSeleccionado.this, PuntuarDia.class);
+                        startActivity(intent);
+                    default:
+                        return false;
                 }
-            });
-
-        }
-
-        return super.onCreateOptionsMenu(bottomMenu);
-    }*/
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bottom_app_bar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.calificar_dia:
-                Intent intent = new Intent(TareasDiaSeleccionado.this, PuntuarDia.class);
-                startActivity(intent);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+            }
+        });
 
 
     }
+
 
     //funcion para mostrar las tareas de ese día
     public Cursor displayDatabase(){
