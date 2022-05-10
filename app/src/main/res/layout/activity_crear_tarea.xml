@@ -16,29 +16,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tv_addTaskTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:text="Crear nueva tarea : "
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="24sp" />
+            android:layout_margin="4dp"
+            android:hint="@string/shr_hint_username">
 
-        <EditText
-            android:id="@+id/et_taskName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:ems="10"
-            android:fontFamily="casual"
-            android:inputType="textPersonName"
-            android:text="nombre de la tarea"
-            android:textAlignment="viewStart"
-            android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_taskName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_saveTaskName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,9 +40,8 @@
             android:background="#EDD8F0"
             android:backgroundTint="#FF5722"
             android:gravity="right"
-            android:text="guardar"
+            android:text="anyadir"
             android:textAlignment="gravity"
-            android:onClick="writeToDataBase"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>

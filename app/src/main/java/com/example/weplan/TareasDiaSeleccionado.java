@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,7 +17,9 @@ import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +27,7 @@ import com.example.weplan.adapters.AdapterTareasHoy;
 import com.example.weplan.database.TareaContract;
 import com.example.weplan.database.TareaHelper;
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
@@ -51,9 +55,18 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
         nuevatarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(TareasDiaSeleccionado.this, CrearTareaDiaSeleccionado.class);
                 intent.putExtra("dateadd", date);
                 startActivity(intent);
+
+                /*DialogFragment newFragment = new NuevaTareaFragment();
+                Bundle args = new Bundle();
+                args.putString("dateadd", date);
+                args.putString("contexto", String.valueOf(getApplicationContext()));
+                newFragment.setArguments(args);
+                newFragment.show(getSupportFragmentManager(), "nueva_tarea");*/
+
             }
         });
         BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
@@ -69,6 +82,7 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
                 }
             }
         });
+
 
 
     }

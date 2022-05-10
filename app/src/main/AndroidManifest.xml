@@ -11,7 +11,7 @@
         android:theme="@style/Theme.WePlan">
         <activity
             android:name=".CrearTarea"
-            android:exported="false" />
+        android:exported="false" />
         <activity
             android:name=".PuntuarDia"
             android:exported="false" />
