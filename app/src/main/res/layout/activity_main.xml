@@ -37,6 +37,28 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
+                android:id="@+id/tv_actualDateText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/ib_actualDateButton"
+                android:layout_alignTop="@id/ib_actualDateButton"
+                android:layout_alignRight="@id/ib_actualDateButton"
+                android:layout_alignBottom="@+id/ib_actualDateButton"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginLeft="-1dp"
+                android:layout_marginTop="-24dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Dia actual:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/tv_actualDateText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,6 +76,7 @@
                 android:text="Aqui ponemos el dia actual"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
