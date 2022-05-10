@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,6 +66,7 @@ public class AdapterTareasTotales extends RecyclerView.Adapter<AdapterTareasTota
         mOnItemClickListener = itemClickListener;
     }
 
+    private  boolean onViewHolderBind;
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public CheckBox tarea;
@@ -73,9 +75,19 @@ public class AdapterTareasTotales extends RecyclerView.Adapter<AdapterTareasTota
             super(view);
 
             tarea = view.findViewById(R.id.checkboxtarea);
+
             view.setTag(this);
+            tarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if(b){
+
+                    }
+                }
+            });
 
         }
+
 
         public void onClick(View v){
 

@@ -26,7 +26,8 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
     View.OnClickListener mOnItemClickListener;
 
     public Cursor getCursor(){return items;}
-    public void setCursor(Cursor newCursor){
+    public void setCursor(Context newContext, Cursor newCursor){
+        context = newContext;
         items = newCursor;
         notifyDataSetChanged();
     }
@@ -57,6 +58,54 @@ public class AdapterTareasHoy extends RecyclerView.Adapter<AdapterTareasHoy.View
         holder.tarea.setText(name);
         boolean a = (done !=0);
         holder.tarea.setChecked(a);
+
+        holder.tarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    String nombre_tarea = holder.tarea.getText().toString();
+                    String app = "WePlan";
+
+                    TareaHelper dbHelper = new TareaHelper(context);
+                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                    ContentValues values = new ContentValues();
+                    values.put(TareaContract.TareaEntry.COLUMN_DONE, 1);
+
+                    String selection = TareaContract.TareaEntry.COLUMN_TASKNAME + " LIKE ?";
+                    String[] selectionArgs = {nombre_tarea};
+
+                    int count = db.update(
+                            TareaContract.TareaEntry.TABLE_NAME,
+                            values,
+                            selection,
+                            selectionArgs
+                    );
+                }
+                else{
+                    String nombre_tarea = holder.tarea.getText().toString();
+                    String app = "WePlan";
+
+                    TareaHelper dbHelper = new TareaHelper(context);
+                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                    ContentValues values = new ContentValues();
+                    values.put(TareaContract.TareaEntry.COLUMN_DONE, 0);
+
+                    String selection = TareaContract.TareaEntry.COLUMN_TASKNAME + " LIKE ?";
+                    String[] selectionArgs = {nombre_tarea};
+
+                    int count = db.update(
+                            TareaContract.TareaEntry.TABLE_NAME,
+                            values,
+                            selection,
+                            selectionArgs
+                    );
+                }
+            }
+        });
+
+
 
 
      /*holder.tarea.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

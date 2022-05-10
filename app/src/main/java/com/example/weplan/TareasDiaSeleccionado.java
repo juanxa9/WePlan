@@ -46,7 +46,7 @@ public class TareasDiaSeleccionado extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-        adapter.setCursor(cursor);
+        adapter.setCursor(getApplicationContext(),cursor);
 
 
 

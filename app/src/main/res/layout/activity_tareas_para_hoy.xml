@@ -16,12 +16,11 @@
         android:paddingTop="30dp"
         android:paddingBottom="50dp"
         android:text="Tus tareas para hoy"
-
-
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinator"
+
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -32,14 +31,16 @@
 
         android:paddingTop="100dp"
         android:paddingBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textotareashoy">
 
         <!-- Note: A RecyclerView can also be used -->
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize"
             android:clipToPadding="false"
             android:paddingBottom="100dp"
@@ -47,12 +48,16 @@
 
             <!-- Scrollable content -->
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_tareas_hoy"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginEnd="4dp"
                 android:scrollbars="vertical" />
+
+
+
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomappbar.BottomAppBar

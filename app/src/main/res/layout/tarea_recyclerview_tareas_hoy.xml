@@ -9,6 +9,7 @@
         android:id="@+id/checkboxtarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:text="Tarea1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

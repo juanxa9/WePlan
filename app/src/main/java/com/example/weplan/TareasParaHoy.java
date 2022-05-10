@@ -107,7 +107,7 @@ public class TareasParaHoy extends AppCompatActivity {
 
         //setup cursor adapter
         AdapterTareasHoy adapter = new AdapterTareasHoy();
-        adapter.setCursor(cursor);
+        adapter.setCursor(getApplicationContext(),cursor);
         RecyclerView recyclerView = findViewById(R.id.recyclerview_tareas_hoy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
