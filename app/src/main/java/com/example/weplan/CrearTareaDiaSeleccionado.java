@@ -4,11 +4,14 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AlertDialogLayout;
 
@@ -30,21 +33,21 @@ public class CrearTareaDiaSeleccionado extends AppCompatActivity {
 
         setContentView(R.layout.activity_crear_tarea);
         date = getIntent().getStringExtra("dateadd");
-        final TextInputEditText editText = (TextInputEditText) findViewById(R.id.et_taskName);
-        final TextInputLayout layoutText = (TextInputLayout) findViewById(R.id.tv_addTaskTitle);
+        TextInputEditText editText = (TextInputEditText) findViewById(R.id.et_taskName);
+        TextInputLayout layoutText = (TextInputLayout) findViewById(R.id.tv_addTaskTitle);
 
         MaterialButton anyadirtarea = findViewById(R.id.bt_saveTaskName);
         anyadirtarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = editText.getText().toString();
 
-                if (editText!=null){
-                    writeToDataBase(name);
-                    layoutText.setError(null);
+                if (TextUtils.isEmpty(editText.getText().toString())){
+                    layoutText.setError("Tienes que añadir una tarea");
                 }
                 else{
-                    layoutText.setError("Tienes que añadir una tarea");
+                    String name = editText.getText().toString();
+                    writeToDataBase(name);
+                    layoutText.setError(null);
                 }
 
             }
@@ -53,7 +56,7 @@ public class CrearTareaDiaSeleccionado extends AppCompatActivity {
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (editText.getText()!=null) {
+                if (!TextUtils.isEmpty(editText.getText().toString())) {
                     layoutText.setError(null); //Clear the error
 
                 }
