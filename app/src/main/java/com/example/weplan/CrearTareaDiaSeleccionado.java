@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
@@ -48,6 +49,8 @@ public class CrearTareaDiaSeleccionado extends AppCompatActivity {
                     String name = editText.getText().toString();
                     writeToDataBase(name);
                     layoutText.setError(null);
+                    //CalendarView calendario = (CalendarView) findViewById(R.id.cv_calendar);
+                    //calendario
                 }
 
             }

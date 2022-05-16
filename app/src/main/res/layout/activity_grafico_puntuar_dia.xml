@@ -89,7 +89,7 @@
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
-                        android:background="@color/CPP" />
+                        android:background="@color/Java" />
 
                     <!--Text view to display C++ text -->
                     <TextView
@@ -111,7 +111,7 @@
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
-                        android:background="@color/Java" />
+                        android:background="@color/CPP" />
 
                     <!--Text view to display Java text -->
                     <TextView
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                android:text="Puntuación general del trabajo:"
+                android:text="Seguimiento del trabajo:"
                 android:textSize="23sp"
                 android:textStyle="bold" />
 
