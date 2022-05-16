@@ -3,11 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2325" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/bordergreen.xml" value="0.1075" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/ic_add_24dp.xml" value="0.1" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/splash_screen.xml" value="0.2325" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_crear_tarea.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_puntuar_dia.xml" value="0.2" />
@@ -16,12 +12,17 @@
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_para_recyclerview.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_hoy.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_totales.xml" value="0.22282608695652173" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/drawable/date_calendar.xml" value="0.2985" />
         <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/drawable/splash_screen.xml" value="0.26" />
         <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_crear_tarea.xml" value="0.25" />
-        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_main.xml" value="0.67" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_puntuar_dia.xml" value="0.26132246376811596" />
         <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_tareas_para_hoy.xml" value="0.25" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/activity_tareas_totales.xml" value="0.3625" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_hoy.xml" value="0.3625" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/layout/tarea_recyclerview_tareas_totales.xml" value="0.26132246376811596" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/menu/bottom_app_bar.xml" value="0.3625" />
+        <entry key="..\:/Users/juan2/Desktop/UNIVERSIDAD 2.0/4 curso(2021-2022)/ADM/WePlan/app/src/main/res/menu/mimenu.xml" value="0.3625" />
       </map>
     </option>
   </component>

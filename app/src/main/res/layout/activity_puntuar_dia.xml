@@ -7,74 +7,91 @@
     tools:context=".PuntuarDia">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="5dp"
-        app:cardPreventCornerOverlap="false"
+    <TextView
+        android:id="@+id/puntuaDia"
+        android:layout_width="413dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:paddingTop="30dp"
+        android:text="puntua el dia de hoy"
+
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-1dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="282dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/puntuaDia">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card3"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="true">
 
 
-        <!-- Media -->
-        <ImageView
-            android:layout_width="208dp"
-            android:layout_height="210dp"
-            android:layout_gravity="center"
-            android:padding="2dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/sunglasses_emoji_png_17396" />
+            <!-- Media -->
+            <ImageView
+                android:layout_width="82dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/toppng_com_sad_emoji_png_pic_640x640" />
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="5dp"
-        app:cardPreventCornerOverlap="false"
-       app:layout_constraintTop_toBottomOf="@+id/card"
-       >
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false">
 
 
-        <!-- Media -->
-        <ImageView
-            android:layout_width="208dp"
-            android:layout_height="210dp"
-            android:layout_gravity="center"
-            android:padding="2dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/neutral_face_emoji" />
+            <!-- Media -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/neutral_face_emoji" />
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="5dp"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card2"
-        tools:layout_editor_absoluteX="8dp">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="91dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false">
 
 
-        <!-- Media -->
-        <ImageView
-            android:layout_width="210dp"
-            android:layout_height="210dp"
-            android:layout_gravity="center"
-            android:padding="2dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/toppng_com_sad_emoji_png_pic_640x640" />
+            <!-- Media -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/sunglasses_emoji_png_17396" />
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
