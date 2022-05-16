@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tareas_completadas:
                 Intent intent = new Intent(MainActivity.this, TareasTotales.class);
                 startActivity(intent);
+            case R.id.productividad:
+                Intent intent2 = new Intent(MainActivity.this, GraficoPuntuarDia.class);
+                startActivity(intent2);
             default:
                 return super.onOptionsItemSelected(item);
         }
