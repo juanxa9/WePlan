@@ -27,6 +27,12 @@ public class GraficoPuntuarDia extends AppCompatActivity {
         setData();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
     private void setData()
     {
 
