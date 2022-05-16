@@ -71,8 +71,10 @@ public class TareasParaHoy extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.calificar_dia:
                         Intent intent = new Intent(TareasParaHoy.this, PuntuarDia.class);
-
+                        intent.putExtra("dia_puntuar", date);
+                        intent.putExtra("Class", "TareasHoy");
                         startActivity(intent);
+                        return true;
                     default:
                         return false;
                 }

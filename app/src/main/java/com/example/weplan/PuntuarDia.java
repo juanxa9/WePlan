@@ -14,10 +14,20 @@ import com.example.weplan.database.TareaHelper;
 
 public class PuntuarDia extends AppCompatActivity {
 
+    String dia_puntuado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puntuar_dia);
+        dia_puntuado = getIntent().getStringExtra("dia_puntuar");
+
+        String className = getIntent().getStringExtra("Class");
+        if(className.equals("TareasSeleccion")){
+            dia_puntuado = getIntent().getStringExtra("dia_para_puntuar");
+        }
+        else{
+            dia_puntuado = getIntent().getStringExtra("dia_puntuar");
+        }
 
 
         ImageButton mal = (ImageButton) findViewById(R.id.mal);
@@ -27,7 +37,26 @@ public class PuntuarDia extends AppCompatActivity {
         mal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // writePuntuacionToDataBase();
+               writePuntuacionToDataBase(dia_puntuado, 1);
+               finish();
+
+            }
+        });
+
+        regular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                writePuntuacionToDataBase(dia_puntuado, 2);
+                finish();
+
+            }
+        });
+
+        excelente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                writePuntuacionToDataBase(dia_puntuado, 3);
+                finish();
 
             }
         });
