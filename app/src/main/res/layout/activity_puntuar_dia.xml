@@ -20,8 +20,8 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -43,7 +43,8 @@
 
 
             <!-- Media -->
-            <ImageView
+            <ImageButton
+                android:id="@+id/mal"
                 android:layout_width="82dp"
                 android:layout_height="78dp"
                 android:layout_gravity="center"
@@ -63,7 +64,8 @@
 
 
             <!-- Media -->
-            <ImageView
+            <ImageButton
+                android:id="@+id/regular"
                 android:layout_width="80dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
@@ -83,7 +85,8 @@
 
 
             <!-- Media -->
-            <ImageView
+            <ImageButton
+                android:id="@+id/excelente"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"

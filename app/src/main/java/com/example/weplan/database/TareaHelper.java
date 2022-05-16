@@ -2,7 +2,9 @@ package com.example.weplan.database;
 
 import static com.example.weplan.database.TareaContract.SQL_CREATE_ENTRIES;
 import static com.example.weplan.database.TareaContract.SQL_CREATE_ENTRIES;
+import static com.example.weplan.database.TareaContract.SQL_CREATE_ENTRIES_P;
 import static com.example.weplan.database.TareaContract.SQL_DELETE_ENTRIES;
+import static com.example.weplan.database.TareaContract.SQL_DELETE_ENTRIES_P;
 
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
@@ -16,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 public class TareaHelper extends SQLiteOpenHelper {
-   public static final int DATABASE_VERSION=1;
+   public static final int DATABASE_VERSION=2;
    public static final String DATABASE_NAME="Tasks.db";
 
     public TareaHelper(@Nullable Context context) {
@@ -26,12 +28,15 @@ public class TareaHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(SQL_CREATE_ENTRIES);
+        db.execSQL(SQL_CREATE_ENTRIES_P);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_ENTRIES);
+        db.execSQL(SQL_DELETE_ENTRIES_P);
         onCreate(db);
     }
 
