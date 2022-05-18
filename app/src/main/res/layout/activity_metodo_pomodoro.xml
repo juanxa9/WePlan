@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,4 +7,45 @@
     android:background="#EDCE9F"
     tools:context=".MetodoPomodoro">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="302dp"
+        android:layout_height="441dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="139dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/tomate" />
+
+    <TextView
+        android:id="@+id/countdown_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:text="00:00"
+         />
+
+    <Button
+        android:id="@+id/countdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/countdown_text"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#A63511"
+        android:text="start" />
+
+    <Button
+        android:id="@+id/countdown_button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/countdown_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:backgroundTint="#A63511"
+        android:text="reset"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
+</RelativeLayout>

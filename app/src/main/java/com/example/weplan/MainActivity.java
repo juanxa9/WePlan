@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.tareas_completadas:
-                Intent intent = new Intent(MainActivity.this, TareasTotales.class);
+                Intent intent = new Intent(MainActivity.this, MetodoPomodoro.class);
                 startActivity(intent);
                 return true;
             case R.id.productividad:
