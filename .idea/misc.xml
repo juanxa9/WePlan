@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/bordergreen.xml" value="0.1075" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/drawable/splash_screen.xml" value="0.223" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_crear_tarea.xml" value="0.14722222222222223" />
-        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_grafico_puntuar_dia.xml" value="0.2368659420289855" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_metodo_pomodoro.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_puntuar_dia.xml" value="0.2" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_tareas_para_hoy.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/MIRENA/AndroidStudioProjects/WePlan/app/src/main/res/layout/activity_tareas_totales.xml" value="0.22282608695652173" />

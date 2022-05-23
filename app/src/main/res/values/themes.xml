@@ -36,4 +36,25 @@
     <style name="splashTheme" parent="Theme.WePlan">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
+
+
+    <style name="Widget.App.BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomAppBar</item>
+    </style>
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomAppBar" parent="">
+        <item name="colorPrimary">@color/colorbarra</item>
+        <item name="colorOnPrimary">@color/colorsecbarra</item>
+        <item name="textAppearanceSubtitle1">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.FloatingActionButton" parent="">
+        <item name="colorSecondary">#FF9D96</item>
+        <item name="colorOnSecondary">#39110F</item>
+
+    </style>
 </resources>

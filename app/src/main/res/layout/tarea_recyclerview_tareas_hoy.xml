@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="Tarea1"
+        android:textColor="#404040"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

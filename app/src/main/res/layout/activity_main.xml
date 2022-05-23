@@ -3,82 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/michifondotitulo"
     tools:context=".MainActivity">
 
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="323dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginBottom="70dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="240dp">// Only works inside a RelativeLayout
-
-            <ImageButton
-                android:id="@+id/ib_actualDateButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/date_calendar"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/tv_actualDateText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/ib_actualDateButton"
-                android:layout_alignTop="@id/ib_actualDateButton"
-                android:layout_alignRight="@id/ib_actualDateButton"
-                android:layout_alignBottom="@+id/ib_actualDateButton"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="-1dp"
-                android:layout_marginLeft="-1dp"
-                android:layout_marginTop="-24dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="24dp"
-                android:gravity="center"
-                android:text="Dia actual:"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_actualDateText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/ib_actualDateButton"
-                android:layout_alignTop="@id/ib_actualDateButton"
-                android:layout_alignRight="@id/ib_actualDateButton"
-                android:layout_alignBottom="@+id/ib_actualDateButton"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:gravity="center"
-                android:text="Aqui ponemos el dia actual"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
 
         <CalendarView
             android:id="@+id/cv_calendar"

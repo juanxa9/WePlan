@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:background="@color/nuestrofondo"
+    android:layout_height="match_parent"
     tools:context=".PuntuarDia">
 
 
@@ -11,32 +12,39 @@
         android:id="@+id/puntuaDia"
         android:layout_width="413dp"
         android:layout_height="94dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+
         android:fontFamily="casual"
         android:paddingTop="30dp"
-        android:text="puntua el dia de hoy"
-
+        android:text="puntúa tu trabajo de hoy para tener un seguimiento de tu esfuerzo"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:textColor="@color/colordeltitulo"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="282dp"
-        android:layout_height="94dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puntuaDia">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card3"
-            android:layout_width="96dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            app:cardBackgroundColor="#F8E2E2"
             app:cardCornerRadius="30dp"
             app:cardElevation="5dp"
             app:cardPreventCornerOverlap="true">
@@ -45,9 +53,10 @@
             <!-- Media -->
             <ImageButton
                 android:id="@+id/mal"
-                android:layout_width="82dp"
-                android:layout_height="78dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
+                android:backgroundTint="#00FFFFFF"
                 android:padding="2dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/toppng_com_sad_emoji_png_pic_640x640" />
@@ -56,8 +65,9 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card2"
-            android:layout_width="94dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#F8E2E2"
             app:cardCornerRadius="30dp"
             app:cardElevation="5dp"
             app:cardPreventCornerOverlap="false">
@@ -66,9 +76,10 @@
             <!-- Media -->
             <ImageButton
                 android:id="@+id/regular"
-                android:layout_width="80dp"
-                android:layout_height="75dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
+                android:backgroundTint="#00FFFFFF"
                 android:padding="2dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/neutral_face_emoji" />
@@ -77,8 +88,9 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
-            android:layout_width="91dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#F8E2E2"
             app:cardCornerRadius="30dp"
             app:cardElevation="5dp"
             app:cardPreventCornerOverlap="false">
@@ -87,9 +99,10 @@
             <!-- Media -->
             <ImageButton
                 android:id="@+id/excelente"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
+                android:background="#00FFFFFF"
                 android:padding="2dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/sunglasses_emoji_png_17396" />

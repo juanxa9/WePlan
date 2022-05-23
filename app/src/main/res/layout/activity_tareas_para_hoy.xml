@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#FFEB3B"
+    android:background="@color/nuestrofondo"
     tools:context=".TareasParaHoy">
 
 
@@ -17,7 +17,7 @@
         android:paddingBottom="50dp"
         android:text="Tus tareas para hoy"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="@color/colordeltitulo"
         android:textSize="24sp"
 
         android:textStyle="bold"
@@ -62,9 +62,10 @@
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            style="@style/Widget.App.BottomAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_app_bar"
 
@@ -74,6 +75,7 @@
             android:id="@+id/anyadirnuevatarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/Widget.App.FloatingActionButton"
             app:layout_anchor="@id/bottomAppBar"
             app:srcCompat="@drawable/ic_add_24dp" />
 

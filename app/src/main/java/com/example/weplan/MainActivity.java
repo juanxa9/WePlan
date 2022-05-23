@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+       /* SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Calendar c = Calendar.getInstance();
         String stringTime = sdf.format(c.getTime());
         TextView dia_actual = findViewById(R.id.tv_actualDateText);
-        dia_actual.setText(stringTime);
+        dia_actual.setText(stringTime);*/
 
        /* // inside your activity (if you did not enable transitions in your theme)
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
