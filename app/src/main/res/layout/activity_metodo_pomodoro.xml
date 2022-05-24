@@ -7,14 +7,24 @@
     android:background="@color/nuestrofondo"
     tools:context=".MetodoPomodoro">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/imageView"
+        android:layout_centerInParent="true"
+        android:text="Método Pomodoro"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="302dp"
-        android:layout_height="441dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="304dp"
+        android:layout_height="315dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="139dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         app:srcCompat="@drawable/tomate" />
 
     <TextView
