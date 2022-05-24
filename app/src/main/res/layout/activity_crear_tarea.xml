@@ -40,7 +40,7 @@
             android:background="#EDD8F0"
             android:backgroundTint="#FF5722"
             android:gravity="right"
-            android:text="anyadir"
+            android:text="añadir"
             android:textAlignment="gravity"
             tools:ignore="TextContrastCheck" />
 
