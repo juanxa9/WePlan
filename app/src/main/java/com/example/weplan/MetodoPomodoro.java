@@ -2,6 +2,8 @@ package com.example.weplan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -12,6 +14,8 @@ import java.util.Locale;
 
 public class MetodoPomodoro extends AppCompatActivity {
     private static final long TIME_MILLI_SECONDS = 1500000; //25mins
+
+    private Button helpButton;
 
     private TextView countdownText;
     private Button countdownButton;
@@ -26,9 +30,19 @@ public class MetodoPomodoro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metodo_pomodoro);
 
+        helpButton = findViewById(R.id.help_pomodoro_button);
+
         countdownText = findViewById(R.id.countdown_text);
         countdownButton = findViewById(R.id.countdown_button);
         countdownButtonReset = findViewById(R.id.countdown_button_reset);
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro"));
+                startActivity(browserIntent);
+            }
+        });
 
         countdownButton.setOnClickListener(new View.OnClickListener() {
             @Override

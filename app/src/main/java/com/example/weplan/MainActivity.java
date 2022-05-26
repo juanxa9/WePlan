@@ -7,6 +7,7 @@ import androidx.core.view.GestureDetectorCompat;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.view.GestureDetector;
@@ -94,7 +95,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.tareas_completadas:
+            case R.id.musicaMenu:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/5qap5aO4i9A"));
+                startActivity(browserIntent);
+                return true;
+            case R.id.pomodoro:
                 Intent intent = new Intent(MainActivity.this, MetodoPomodoro.class);
                 startActivity(intent);
                 return true;
