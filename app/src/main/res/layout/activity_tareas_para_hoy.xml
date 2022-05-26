@@ -12,7 +12,7 @@
         android:id="@+id/textotareashoy"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif"
         android:paddingTop="30dp"
         android:paddingBottom="50dp"
         android:text="Tus tareas para hoy"
@@ -65,11 +65,9 @@
             style="@style/Widget.App.BottomAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_app_bar"
-
-            app:navigationIcon="@drawable/ic_menu_24dp" />
+       />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/anyadirnuevatarea"

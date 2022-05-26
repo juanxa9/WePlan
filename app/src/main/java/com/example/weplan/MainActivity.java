@@ -2,12 +2,17 @@ package com.example.weplan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GestureDetectorCompat;
 
 import android.app.ActivityOptions;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.view.GestureDetector;
@@ -39,23 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.Theme_WePlan);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-       /* SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar c = Calendar.getInstance();
-        String stringTime = sdf.format(c.getTime());
-        TextView dia_actual = findViewById(R.id.tv_actualDateText);
-        dia_actual.setText(stringTime);*/
-
-       /* // inside your activity (if you did not enable transitions in your theme)
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-
-        // set an exit transition
-        getWindow().setExitTransition(new Explode());*/
-
-        /*ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-        Intent intent = new Intent(MainActivity.this, TareasParaHoy.class);
-        startActivity(intent, options.toBundle());*/
-
+        createNotificationChannel();
 
 
 
@@ -80,10 +69,26 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("selected_date", stringTime);
                 startActivity(intent);
 
-                //Toast.makeText(getApplicationContext(), ""+stringTime, Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "canalNotificaciones";
+            String description = "canal de notificaciones para las tareas pendientes";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("canalmio", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

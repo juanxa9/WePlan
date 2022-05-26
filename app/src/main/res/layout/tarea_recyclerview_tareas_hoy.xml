@@ -9,7 +9,7 @@
         android:id="@+id/checkboxtarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-thin"
         android:text="Tarea1"
         android:textColor="#404040"
         android:textSize="20sp"

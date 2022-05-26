@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/nuestrofondo"
     tools:context=".CrearTarea">
 
     <LinearLayout
@@ -28,6 +29,7 @@
                 android:id="@+id/et_taskName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
                 android:inputType="text"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -39,9 +41,11 @@
             android:layout_margin="10dp"
             android:background="#EDD8F0"
             android:backgroundTint="#FF5722"
+            android:fontFamily="sans-serif-medium"
             android:gravity="right"
             android:text="añadir"
             android:textAlignment="gravity"
+            android:textColor="@color/colordeltitulo"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>

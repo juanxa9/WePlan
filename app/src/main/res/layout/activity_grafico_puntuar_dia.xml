@@ -157,7 +157,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-thin"
                 android:text="Seguimiento del trabajo:"
+                android:textColor="@color/colordeltitulo"
                 android:textSize="23sp"
                 android:textStyle="bold" />
 

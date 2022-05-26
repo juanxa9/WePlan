@@ -2,15 +2,15 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/musicaMenu"
-        android:icon="@drawable/productividad"
+        android:icon="@drawable/video"
         android:title="musica"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/pomodoro"
-        android:icon="@drawable/tareas_completadas"
+        android:icon="@drawable/timer"
         android:title="Tareas Completadas"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/productividad"
-        android:icon="@drawable/productividad"
+        android:icon="@drawable/user"
         android:title="Productividad"
         app:showAsAction="ifRoom" />
 
